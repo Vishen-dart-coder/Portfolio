@@ -1,11 +1,11 @@
-import { Octokit } from 'octokit';
+import { Octokit as OctokitClass } from 'octokit';
 import { cache } from 'react';
 
 const USERNAME = 'Vishen-dart-coder';
 
 // Initialize Octokit with optional token
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
+const octokit = new OctokitClass({
+  auth: process.env.GITHUB_TOKEN || undefined,
 });
 
 // Types
@@ -88,14 +88,14 @@ export const getGitHubData = cache(async (): Promise<{
 }> => {
   try {
     // Fetch user's repositories
-    const { data: repos } = await octokit.repos.listForUser({
+    const { data: repos } = await octokit.rest.repos.listForUser({
       username: USERNAME,
       sort: 'updated',
       per_page: 100,
     });
 
     // Fetch user's recent events
-    const { data: events } = await octokit.activity.listPublicEventsForUser({
+    const { data: events } = await octokit.rest.activity.listPublicEventsForUser({
       username: USERNAME,
       per_page: 100,
     });
@@ -127,7 +127,7 @@ export const getGitHubData = cache(async (): Promise<{
 // Fetch top 6 repositories by stars (pinned repos)
 export const getPinnedRepos = cache(async (): Promise<GitHubRepo[]> => {
   try {
-    const { data: repos } = await octokit.repos.listForUser({
+    const { data: repos } = await octokit.rest.repos.listForUser({
       username: USERNAME,
       sort: 'updated',
       per_page: 100,
