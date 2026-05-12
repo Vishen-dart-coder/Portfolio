@@ -22,23 +22,27 @@ const ContactSection = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      // Phase 1: Console log for now
-      console.log('Form submission:', data);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
 
-      // Simulate async operation
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
 
       setSubmitStatus('success');
       reset();
 
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
 
-      // Reset error message after 3 seconds
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      // Reset error message after 5 seconds
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     }
   };
 
