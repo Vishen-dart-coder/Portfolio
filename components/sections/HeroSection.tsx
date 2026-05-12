@@ -1,8 +1,17 @@
+'use client';
+
 import React from 'react';
+import { Scene } from '@/components/three/Scene';
+import { GeometricHero } from '@/components/three/GeometricHero';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900">
+      {/* 3D Background */}
+      <Scene className="opacity-30">
+        <GeometricHero />
+      </Scene>
+
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent-500/10 rounded-full blur-3xl" />
