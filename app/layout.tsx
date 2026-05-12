@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Source_Serif_4 } from "next/font/google";
+import { SmoothScroll } from "@/components/animations/SmoothScroll";
 import "./globals.css";
 
 const sourceSerif = Source_Serif_4({
@@ -27,7 +28,9 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} ${sourceSerif.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
