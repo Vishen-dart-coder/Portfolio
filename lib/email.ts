@@ -1,6 +1,18 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid build-time errors when env var is missing
+let resend: Resend | null = null;
+
+function getResendClient() {
+  if (!resend) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      throw new Error('RESEND_API_KEY environment variable is not set');
+    }
+    resend = new Resend(apiKey);
+  }
+  return resend;
+}
 
 const FROM_EMAIL = 'onboarding@resend.dev'; // Resend's test email
 const TO_EMAIL = 'iamvishensharma@gmail.com';
@@ -13,7 +25,8 @@ export interface ContactFormData {
 
 export async function sendContactEmail(data: ContactFormData) {
   try {
-    const result = await resend.emails.send({
+    const client = getResendClient();
+    const result = await client.emails.send({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       subject: `Portfolio Contact: ${data.name}`,
