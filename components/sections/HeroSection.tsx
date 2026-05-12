@@ -1,8 +1,18 @@
 'use client';
 
 import React from 'react';
-import { Scene } from '@/components/three/Scene';
-import { GeometricHero } from '@/components/three/GeometricHero';
+import dynamic from 'next/dynamic';
+
+// Lazy load the Scene and GeometricHero to prevent SSR issues with Three.js
+const Scene = dynamic(() => import('@/components/three/Scene').then(mod => ({ default: mod.Scene })), {
+  ssr: false,
+  loading: () => null
+});
+
+const GeometricHero = dynamic(() => import('@/components/three/GeometricHero').then(mod => ({ default: mod.GeometricHero })), {
+  ssr: false,
+  loading: () => null
+});
 
 const HeroSection = () => {
   return (
