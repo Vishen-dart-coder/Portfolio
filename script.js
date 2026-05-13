@@ -32,3 +32,38 @@ window.addEventListener('scroll', () => {
     header.classList.remove('scrolled');
   }
 });
+
+// ============================================
+// Active Navigation State
+// ============================================
+
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+const observerOptions = {
+  threshold: 0.5,
+  rootMargin: '-80px 0px 0px 0px' // Offset for fixed header
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+
+      // Remove active class from all links
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Add active class to matching link
+      const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+    }
+  });
+}, observerOptions);
+
+sections.forEach(section => {
+  observer.observe(section);
+});
