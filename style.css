@@ -336,7 +336,7 @@ section {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
-  gap: var(--space-md);
+  gap: var(--space-sm);
   justify-items: center;
 }
 
@@ -353,7 +353,7 @@ section {
 @media (min-width: 768px) {
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
-    gap: var(--space-lg);
+    gap: var(--space-md);
   }
 
   .skills-grid img {
