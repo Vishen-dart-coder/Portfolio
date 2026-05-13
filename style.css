@@ -237,6 +237,7 @@ header.scrolled {
   display: flex;
   gap: var(--space-md);
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .hero-cta {
@@ -244,6 +245,7 @@ header.scrolled {
   font-size: 14px;
   color: var(--color-accent);
   font-weight: 600;
+  padding: 10px 0;
 }
 
 .hero-cta:hover {
@@ -276,9 +278,33 @@ header.scrolled {
   max-width: 260px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
   background-color: var(--color-surface);
+
+  /* Sophisticated multi-layer border */
+  border: 3px solid #D4AF37;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 0 0 6px var(--color-surface),
+    0 0 0 7px rgba(212, 175, 55, 0.3),
+    0 0 0 12px var(--color-surface),
+    0 0 0 13px rgba(212, 175, 55, 0.15),
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 16px 48px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 0 0 6px var(--color-surface),
+    0 0 0 7px rgba(212, 175, 55, 0.4),
+    0 0 0 12px var(--color-surface),
+    0 0 0 13px rgba(212, 175, 55, 0.2),
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    0 20px 56px rgba(0, 0, 0, 0.1);
 }
 
 /* Desktop */
