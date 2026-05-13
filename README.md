@@ -1,120 +1,190 @@
-# Vishen Sharma - Portfolio Website
+# Vishen Sharma - Developer Portfolio
 
-A minimalist portfolio website built with pure HTML, CSS, and JavaScript. Features editorial typography, GitHub API integration, and smooth scroll interactions.
+A clean, minimalist portfolio website showcasing my work as a 13-year-old full-stack developer from India with 7 years of coding experience.
 
-## Features
+![Portfolio Preview](images/careerflow.png)
 
-- **Zero Dependencies**: Pure vanilla HTML/CSS/JS, no frameworks or build tools
-- **GitHub Integration**: Automatically fetches profile photo and top 6 repositories
-- **Smooth Scrolling**: Native smooth scroll with active navigation tracking
-- **Scroll Reveal**: Sections animate into view as you scroll
-- **Responsive Design**: Mobile-first design that works on all devices
-- **Editorial Typography**: Clean serif headings (Source Serif 4) and sans body text (Inter)
-- **Performance Optimized**: Lighthouse score 95+, loads in <2 seconds
+## ✨ Features
 
-## Tech Stack
+- **Zero Dependencies**: Pure vanilla HTML, CSS, and JavaScript - no frameworks or build tools
+- **GitHub Integration**: Automatically fetches profile photo and latest repositories via GitHub API
+- **Featured Projects**: Showcase of live production websites I've built
+- **24 Skill Icons**: Visual representation using skillicons.dev API
+- **Smooth Animations**: Scroll-triggered reveals and smooth scrolling navigation
+- **Fully Responsive**: Mobile-first design that works perfectly on all devices
+- **Editorial Typography**: Clean serif headings (Source Serif 4) and sans-serif body text (Inter)
+- **Performance Optimized**: Loads in under 2 seconds with 95+ Lighthouse score
 
-- **HTML5**: Semantic markup with ARIA labels
-- **CSS3**: Flexbox, Grid, Custom Properties (CSS Variables)
-- **JavaScript**: Fetch API, Intersection Observer, smooth scrolling
-- **Fonts**: Google Fonts (Source Serif 4, Inter)
+## 🚀 Quick Start
 
-## File Structure
+### Local Development
 
-```
-/
-├── index.html          # Main HTML structure
-├── style.css           # All styles (design system + components)
-├── script.js           # JavaScript (API + interactions)
-└── README.md           # This file
+1. Clone the repository:
+```bash
+git clone https://github.com/Vishen-dart-coder/Portfolio.git
+cd Portfolio
 ```
 
-## Getting Started
+2. Open `index.html` in your browser:
+```bash
+# Windows
+start index.html
 
-### Option 1: Open Locally
+# macOS
+open index.html
 
-1. Download or clone the repository
-2. Open `index.html` in your browser
-3. That's it! No build process or installation needed
+# Linux
+xdg-open index.html
+```
 
-### Option 2: Deploy to GitHub Pages
+That's it! No installation, no build process, no dependencies.
 
-1. Create a new repository on GitHub
-2. Push these files to the repository
-3. Go to Settings → Pages
-4. Select "main" branch and "/" (root) folder
-5. Your site will be live at `https://your-username.github.io/repository-name/`
+### Deploy to GitHub Pages
 
-### Option 3: Deploy to Netlify
+1. Push to your GitHub repository
+2. Go to **Settings** → **Pages**
+3. Select **Source**: Deploy from a branch
+4. Select **Branch**: `main` (or `master`) and folder: `/ (root)`
+5. Click **Save**
+6. Your site will be live at `https://your-username.github.io/Portfolio/`
+
+### Deploy to Netlify
 
 1. Go to [netlify.com](https://netlify.com)
 2. Drag and drop your project folder
-3. Site is live instantly with custom URL
+3. Site goes live instantly with a custom URL
+4. Optional: Configure custom domain
 
-## Customization
+## 📁 File Structure
 
-### Update Colors
+```
+Portfolio/
+├── index.html          # Main HTML structure
+├── style.css           # All styles (design system + components)
+├── script.js           # JavaScript (GitHub API + interactions)
+├── images/             # Project screenshots
+│   ├── careerflow.png
+│   └── archive360.png
+├── docs/               # Documentation and design specs
+└── README.md           # This file
+```
+
+## 🎨 Customization
+
+### Update Personal Information
+
+Edit `index.html`:
+- **Hero section**: Change name, tagline, and bio
+- **About section**: Update your story
+- **Skills section**: Add or remove skill icons
+- **Contact section**: Update email and links
+
+### Change Colors
 
 Edit CSS variables in `style.css`:
 
 ```css
 :root {
-  --color-background: #F8F7F4;  /* Page background */
-  --color-accent: #166534;       /* Links and buttons */
-  /* ... more variables */
+  --color-background: #F8F7F4;  /* Warm off-white */
+  --color-surface: #FFFFFF;      /* White cards */
+  --color-primary: #111111;      /* Rich black */
+  --color-secondary: #5F5F5F;    /* Gray text */
+  --color-border: #E7E5E4;       /* Subtle borders */
+  --color-accent: #166534;       /* Deep green */
 }
 ```
 
-### Update Content
-
-Edit text directly in `index.html`:
-
-- **Hero**: Change name, heading, and subheading
-- **About**: Update bio paragraphs
-- **Skills**: Add or remove skill badges
-- **Contact**: Update email and links
-
 ### Update GitHub Username
 
-Edit `script.js` line 5:
+Edit `script.js` line 60:
 
 ```javascript
 const GITHUB_USERNAME = 'Vishen-dart-coder'; // Change this
 ```
 
-## Browser Support
+### Add Featured Projects
 
-- Chrome 90+ ✓
-- Firefox 88+ ✓
-- Safari 14+ ✓
-- Edge 90+ ✓
+1. Take a screenshot of your project
+2. Save it in the `images/` folder
+3. Add a new card in `index.html`:
 
-## Performance
+```html
+<article class="featured-card">
+  <div class="featured-image">
+    <img src="images/your-project.png" alt="Your Project">
+  </div>
+  <div class="featured-content">
+    <h3>Project Name</h3>
+    <p>Project description goes here.</p>
+    <div class="featured-meta">
+      <span class="tech-tag">React</span>
+      <span class="tech-tag">Node.js</span>
+    </div>
+    <a href="https://your-project.com" target="_blank" rel="noopener" class="featured-link">View Live →</a>
+  </div>
+</article>
+```
 
-- **First Contentful Paint**: <1s
-- **Time to Interactive**: <2s
+## 🛠️ Tech Stack
+
+- **HTML5** - Semantic markup with ARIA labels for accessibility
+- **CSS3** - Flexbox, Grid, CSS Custom Properties (variables)
+- **Vanilla JavaScript** - Fetch API, Intersection Observer, smooth scrolling
+- **Google Fonts** - Source Serif 4 (headings) + Inter (body)
+- **skillicons.dev** - Skill icon API
+
+## 🌟 Featured Projects
+
+### CareerFlow AI
+AI-powered career guidance platform helping students and professionals navigate their career paths.
+- **Tech**: React, Node.js, AI/ML
+- **Live**: [careerflow-ai.org.in](https://careerflow-ai.org.in)
+
+### Archive360
+Enterprise digital archiving solution securing India's past and digitizing its future.
+- **Tech**: Next.js, TypeScript, Cloud Storage
+- **Live**: [archive360.co](https://archive360.co)
+
+## 📊 Performance
+
+- **First Contentful Paint**: < 1s
+- **Time to Interactive**: < 2s
 - **Total Page Size**: ~80KB (before images)
-- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
+- **Lighthouse Score**: 95+ across all categories
 
-## Accessibility
+## ♿ Accessibility
 
-- Semantic HTML with proper heading hierarchy
+- Semantic HTML with proper heading hierarchy (h1 → h2 → h3)
 - ARIA labels for navigation landmarks
 - Keyboard navigation support
-- Focus indicators on all interactive elements
+- Visible focus indicators on all interactive elements
 - WCAG AA color contrast compliance
-- Alt text for images
+- Alt text for all images
 
-## License
+## 🌐 Browser Support
+
+- ✅ Chrome 90+
+- ✅ Firefox 88+
+- ✅ Safari 14+
+- ✅ Edge 90+
+
+## 📝 License
 
 MIT License - Feel free to use this template for your own portfolio!
 
-## Credits
+## 🤝 Connect
+
+- **Email**: [iamvishensharma@gmail.com](mailto:iamvishensharma@gmail.com)
+- **GitHub**: [@Vishen-dart-coder](https://github.com/Vishen-dart-coder)
+- **Website**: [careerflow-ai.org.in](https://careerflow-ai.org.in)
+
+## 🙏 Credits
 
 - Design inspired by [Sagar Thakkar's portfolio](https://sagarthakkar.com)
-- Built by Vishen Sharma
-- Fonts: Google Fonts (Source Serif 4, Inter)
+- Built with ❤️ by Vishen Sharma
+- Fonts from Google Fonts (Source Serif 4, Inter)
+- Skill icons from [skillicons.dev](https://skillicons.dev)
 
 ---
 
-**Contact:** [iamvishensharma@gmail.com](mailto:iamvishensharma@gmail.com) | [GitHub](https://github.com/Vishen-dart-coder) | [Website](https://careerflow-ai.org.in)
+**Made with pure HTML, CSS, and JavaScript** - No frameworks, no build tools, just clean code.
