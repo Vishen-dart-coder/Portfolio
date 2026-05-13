@@ -159,3 +159,25 @@ async function initGitHub() {
 
 // Call on page load
 initGitHub();
+
+// ============================================
+// Scroll Reveal Animations
+// ============================================
+
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      revealObserver.unobserve(entry.target); // Only animate once
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+revealElements.forEach(element => {
+  revealObserver.observe(element);
+});
