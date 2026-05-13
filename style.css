@@ -258,7 +258,6 @@ header.scrolled {
   border-radius: 4px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   background-color: var(--color-surface);
-  filter: grayscale(100%);
 }
 
 /* Desktop */
