@@ -133,9 +133,9 @@ header.scrolled {
 }
 
 .logo {
-  font-family: var(--font-serif);
+  font-family: 'Playwrite AR', cursive;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-primary);
 }
 
