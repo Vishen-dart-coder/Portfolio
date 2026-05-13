@@ -289,3 +289,108 @@ header.scrolled {
     max-width: 300px;
   }
 }
+
+/* ============================================
+   Sections
+   ============================================ */
+
+section {
+  padding: var(--space-xl) 0;
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .section-heading {
+    font-size: 32px;
+  }
+}
+
+/* ============================================
+   About Section
+   ============================================ */
+
+.about-content p {
+  margin-bottom: var(--space-md);
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   Skills Section
+   ============================================ */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.skill-badge {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   Contact Section
+   ============================================ */
+
+.contact-intro {
+  font-size: 16px;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 16px;
+  color: var(--color-accent);
+  transition: all 0.2s ease;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  color: var(--color-accent-hover);
+}
+
+.contact-link svg {
+  flex-shrink: 0;
+}
