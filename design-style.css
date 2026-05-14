@@ -685,21 +685,6 @@ section {
   transform: scale(1.1);
 }
 
-.skill-bar {
-  width: 100%;
-  height: 6px;
-  background-color: var(--color-border);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.skill-fill {
-  height: 100%;
-  background-color: var(--color-accent);
-  border-radius: 3px;
-  transition: width 0.3s ease;
-}
-
 @media (min-width: 768px) {
   .skills-grid-with-bars {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
