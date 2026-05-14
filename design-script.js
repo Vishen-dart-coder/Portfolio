@@ -60,6 +60,35 @@ if (backToTopButton) {
 }
 
 // ============================================
+// Parallax Scrolling
+// ============================================
+
+let parallaxTicking = false;
+
+// Only run parallax on desktop and if motion is allowed
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isMobile = window.innerWidth < 768;
+
+if (!prefersReducedMotion && !isMobile) {
+  window.addEventListener('scroll', () => {
+    if (!parallaxTicking) {
+      requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.parallax');
+
+        parallaxElements.forEach(el => {
+          const speed = parseFloat(el.dataset.speed) || 0.5;
+          el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+
+        parallaxTicking = false;
+      });
+      parallaxTicking = true;
+    }
+  });
+}
+
+// ============================================
 // Smooth Scrolling for Navigation Links
 // ============================================
 

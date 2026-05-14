@@ -311,6 +311,17 @@ header.scrolled {
   position: relative;
 }
 
+/* Parallax Support */
+.parallax {
+  will-change: transform;
+}
+
+@media (max-width: 767px) {
+  .parallax {
+    transform: none !important;
+  }
+}
+
 .hero-container {
   display: flex;
   align-items: center;
