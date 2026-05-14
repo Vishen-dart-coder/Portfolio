@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 html {
@@ -51,6 +52,29 @@ body {
   /* Layout */
   --container-max-width: 1200px;
   --content-max-width: 720px;
+}
+
+/* Dark Mode Theme */
+[data-theme="dark"] {
+  /* Colors */
+  --color-background: #1C1A18;
+  --color-surface: #2B2825;
+  --color-primary: #E8E6E3;
+  --color-secondary: #A8A5A0;
+  --color-border: #3D3935;
+  --color-accent: #4A9D6B;
+  --color-accent-hover: #5BB57F;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ============================================
