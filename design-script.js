@@ -1,4 +1,13 @@
 // ============================================
+// Loading Animation
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Remove loading class to trigger fade-in
+  document.body.classList.remove('loading');
+});
+
+// ============================================
 // Dark Mode Toggle
 // ============================================
 
