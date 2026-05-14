@@ -8,8 +8,35 @@
   <meta name="google-site-verification" content="UVAzkAixqSrIxNCGoFbdN6RkXYu8ZxPfMSOEcGz3eCA" />
   <title>Vishen Sharma - Developer Portfolio</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Vishen Sharma - Developer Portfolio">
+  <meta property="og:description" content="13-year-old developer from India with 7 years of coding experience. Building web applications with modern technologies.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vishensharma.vercel.app/">
+  <meta property="og:image" content="https://github.com/Vishen-dart-coder.png">
+  <meta property="og:image:alt" content="Vishen Sharma Profile">
+  <meta property="og:site_name" content="Vishen Sharma Portfolio">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vishen Sharma - Developer Portfolio">
+  <meta name="twitter:description" content="13-year-old developer from India with 7 years of coding experience. Building web applications with modern technologies.">
+  <meta name="twitter:image" content="https://github.com/Vishen-dart-coder.png">
+  <meta name="twitter:image:alt" content="Vishen Sharma Profile">
+
+  <!-- Favicon - Theme Aware -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/svg+xml" href="favicon-dark.svg" media="(prefers-color-scheme: dark)">
+
+  <!-- Theme Detection (prevents flash) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,10 +46,28 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="loading">
   <header role="banner">
     <div class="container header-content">
-      <div class="logo">Vishen Sharma</div>
+      <div class="logo-with-toggle">
+        <div class="logo">Vishen Sharma</div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
 
       <nav role="navigation" aria-label="Main">
         <ul class="nav-links">
@@ -45,18 +90,25 @@
           <p class="hero-greeting">Hi, I'm Vishen.</p>
           <h1 class="hero-heading">I write about building on the web, tech and life.</h1>
           <p class="hero-subheading">13-year-old developer from India with 7 years of coding experience.</p>
+          <div class="hero-metrics">
+            <span class="metric-item">7 Years Coding</span>
+            <span class="metric-separator">•</span>
+            <span class="metric-item" id="repos-count">Loading...</span>
+            <span class="metric-separator">•</span>
+            <span class="metric-item" id="contributions-count">Loading...</span>
+          </div>
           <div class="hero-actions">
             <a href="#projects" class="hero-cta">View my work →</a>
             <a href="resume.pdf" class="resume-button" download>Download Resume</a>
           </div>
         </div>
 
-        <div class="hero-image">
+        <div class="hero-image parallax" data-speed="0.15">
           <img id="profile-photo" src="" alt="Vishen Sharma" loading="lazy">
         </div>
       </div>
 
-      <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <a href="#about" class="scroll-down parallax" data-speed="0.3" aria-label="Scroll down">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 5v14M19 12l-7 7-7-7"/>
         </svg>
@@ -85,6 +137,7 @@
               <p>"Vishen's ability to understand complex requirements and translate them into clean, efficient code is remarkable for someone his age. His work on our web application exceeded expectations."</p>
             </div>
             <div class="testimonial-author">
+              <img src="https://ui-avatars.com/api/?name=Sarah+Mitchell&background=4A9D6B&color=fff&size=48&rounded=true" alt="Sarah Mitchell" class="author-avatar">
               <div class="author-info">
                 <h4>Sarah Mitchell</h4>
                 <p>Senior Product Manager, TechStart</p>
@@ -97,6 +150,7 @@
               <p>"Working with Vishen was a breath of fresh air. He brought innovative solutions to the table and delivered a polished product ahead of schedule. His passion for development really shows in his work."</p>
             </div>
             <div class="testimonial-author">
+              <img src="https://ui-avatars.com/api/?name=Michael+Chen&background=4A9D6B&color=fff&size=48&rounded=true" alt="Michael Chen" class="author-avatar">
               <div class="author-info">
                 <h4>Michael Chen</h4>
                 <p>Founder, DevTools Inc.</p>
@@ -109,6 +163,7 @@
               <p>"Vishen has an impressive grasp of modern web technologies. His attention to detail and commitment to best practices make him stand out. I've been consistently impressed by his problem-solving skills."</p>
             </div>
             <div class="testimonial-author">
+              <img src="https://ui-avatars.com/api/?name=Emily+Rodriguez&background=4A9D6B&color=fff&size=48&rounded=true" alt="Emily Rodriguez" class="author-avatar">
               <div class="author-info">
                 <h4>Emily Rodriguez</h4>
                 <p>Lead Developer, Creative Labs</p>
@@ -157,7 +212,7 @@
           </article>
         </div>
 
-        <div class="section-header" style="margin-top: var(--space-2xl);">
+        <div class="section-header">
           <h2 class="section-heading">Latest Repositories</h2>
           <a href="https://github.com/Vishen-dart-coder?tab=repositories" target="_blank" rel="noopener" class="section-link">View all projects →</a>
         </div>
@@ -186,34 +241,122 @@
     <section id="skills" class="skills-section reveal">
       <div class="container content-container">
         <h2 class="section-heading">Skills</h2>
-        <div class="skills-grid">
-          <img src="https://skillicons.dev/icons?i=html" alt="HTML" title="HTML">
-          <img src="https://skillicons.dev/icons?i=css" alt="CSS" title="CSS">
-          <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" title="JavaScript">
-          <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" title="TypeScript">
-          <img src="https://skillicons.dev/icons?i=python" alt="Python" title="Python">
-          <img src="https://skillicons.dev/icons?i=java" alt="Java" title="Java">
-          <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" title="MongoDB">
-          <img src="https://skillicons.dev/icons?i=react" alt="React" title="React">
-          <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" title="Next.js">
-          <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" title="Node.js">
-          <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS" title="Tailwind CSS">
-          <img src="https://skillicons.dev/icons?i=git" alt="Git" title="Git">
-          <img src="https://skillicons.dev/icons?i=github" alt="GitHub" title="GitHub">
-          <img src="https://skillicons.dev/icons?i=figma" alt="Figma" title="Figma">
-          <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" title="VS Code">
-          <img src="https://skillicons.dev/icons?i=aws" alt="AWS" title="AWS">
-          <img src="https://skillicons.dev/icons?i=supabase" alt="Supabase" title="Supabase">
-          <img src="https://skillicons.dev/icons?i=svelte" alt="Svelte" title="Svelte">
-          <img src="https://skillicons.dev/icons?i=angular" alt="Angular" title="Angular">
-          <img src="https://skillicons.dev/icons?i=vercel" alt="Vercel" title="Vercel">
-          <img src="https://skillicons.dev/icons?i=docker" alt="Docker" title="Docker">
-          <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" title="PostgreSQL">
-          <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" title="MongoDB">
-          <img src="https://skillicons.dev/icons?i=python" alt="Python" title="Python">
-          <img src="https://skillicons.dev/icons?i=firebase" alt="Firebase" title="Firebase">
-          <img src="https://skillicons.dev/icons?i=prisma" alt="Prisma" title="Prisma">
-          <img src="https://skillicons.dev/icons?i=graphql" alt="GraphQL" title="GraphQL">
+
+        <div class="skills-category">
+          <h3 class="skills-category-title">Primary Skills</h3>
+          <div class="skills-grid-with-bars">
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=html" alt="HTML" title="HTML">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=css" alt="CSS" title="CSS">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" title="JavaScript">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=git" alt="Git" title="Git">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=github" alt="GitHub" title="GitHub">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" title="VS Code">
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="skills-category-title">Advanced Skills</h3>
+          <div class="skills-grid-with-bars">
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" title="TypeScript">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=react" alt="React" title="React">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" title="Next.js">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" title="Node.js">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS" title="Tailwind CSS">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=figma" alt="Figma" title="Figma">
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="skills-category-title">Learning</h3>
+          <div class="skills-grid-with-bars">
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=python" alt="Python" title="Python">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=java" alt="Java" title="Java">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" title="MongoDB">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=aws" alt="AWS" title="AWS">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=supabase" alt="Supabase" title="Supabase">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=svelte" alt="Svelte" title="Svelte">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=angular" alt="Angular" title="Angular">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=vercel" alt="Vercel" title="Vercel">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=docker" alt="Docker" title="Docker">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" title="PostgreSQL">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=firebase" alt="Firebase" title="Firebase">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=prisma" alt="Prisma" title="Prisma">
+            </div>
+            <div class="skill-item">
+              <img src="https://skillicons.dev/icons?i=graphql" alt="GraphQL" title="GraphQL">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="github-stats" class="github-stats-section reveal">
+      <div class="container">
+        <h2 class="section-heading">GitHub Stats</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="total-stars">-</div>
+            <div class="stat-label">Total Stars</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="total-forks">-</div>
+            <div class="stat-label">Total Forks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="public-repos">-</div>
+            <div class="stat-label">Public Repositories</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="top-language">-</div>
+            <div class="stat-label">Top Language</div>
+          </div>
         </div>
       </div>
     </section>
@@ -222,6 +365,25 @@
       <div class="container content-container">
         <h2 class="section-heading">Get in Touch</h2>
         <p class="contact-intro">Feel free to reach out for collaborations or just a chat.</p>
+
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Your message..." rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
 
         <div class="contact-links">
           <a href="mailto:iamvishensharma@gmail.com" class="contact-link">
@@ -237,6 +399,13 @@
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
             github.com/Vishen-dart-coder
+          </a>
+
+          <a href="https://linkedin.com/in/vishen-sharma" target="_blank" rel="noopener" class="contact-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            linkedin.com/in/vishen-sharma
           </a>
 
           <a href="https://careerflow-ai.org.in" target="_blank" rel="noopener" class="contact-link">
@@ -271,6 +440,12 @@
           </svg>
         </a>
 
+        <a href="https://linkedin.com/in/vishen-sharma" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+
         <a href="mailto:iamvishensharma@gmail.com" aria-label="Email">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -282,5 +457,12 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
 </body>
 </html>

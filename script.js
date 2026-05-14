@@ -1,4 +1,156 @@
 // ============================================
+// Loading Animation
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Remove loading class to trigger fade-in
+  document.body.classList.remove('loading');
+});
+
+// ============================================
+// Dark Mode Toggle
+// ============================================
+
+const themeToggle = document.getElementById('theme-toggle');
+
+// Update favicon based on theme
+function updateFavicon(theme) {
+  const lightFavicon = document.querySelector('link[href="favicon.svg"]');
+  const darkFavicon = document.querySelector('link[href="favicon-dark.svg"]');
+
+  if (theme === 'dark') {
+    if (lightFavicon) lightFavicon.remove();
+    if (!document.querySelector('link[href="favicon-dark.svg"]')) {
+      const link = document.createElement('link');
+      link.rel = 'icon';
+      link.type = 'image/svg+xml';
+      link.href = 'favicon-dark.svg';
+      document.head.appendChild(link);
+    }
+  } else {
+    if (darkFavicon) darkFavicon.remove();
+    if (!document.querySelector('link[href="favicon.svg"]')) {
+      const link = document.createElement('link');
+      link.rel = 'icon';
+      link.type = 'image/svg+xml';
+      link.href = 'favicon.svg';
+      document.head.appendChild(link);
+    }
+  }
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateFavicon(newTheme);
+
+    // Update ARIA label
+    const isDark = newTheme === 'dark';
+    themeToggle.setAttribute('aria-label', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+    themeToggle.setAttribute('title', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+  });
+
+  // Set initial ARIA label and favicon
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const isDark = currentTheme === 'dark';
+  themeToggle.setAttribute('aria-label', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+  themeToggle.setAttribute('title', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+  updateFavicon(currentTheme);
+}
+
+// ============================================
+// Back to Top Button
+// ============================================
+
+const backToTopButton = document.getElementById('back-to-top');
+
+if (backToTopButton) {
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 500) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  });
+
+  // Scroll to top on click
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// ============================================
+// Scroll Down Indicator Auto-Show
+// ============================================
+
+const scrollDownIndicator = document.querySelector('.scroll-down');
+let scrollDownTimer;
+let currentSection = null;
+
+// Show scroll down indicator after user stays in a section for 3 seconds
+function startScrollDownTimer() {
+  clearTimeout(scrollDownTimer);
+  scrollDownTimer = setTimeout(() => {
+    if (scrollDownIndicator && window.pageYOffset < 500) {
+      scrollDownIndicator.classList.add('visible');
+    }
+  }, 3000);
+}
+
+// Hide scroll down indicator when user scrolls
+window.addEventListener('scroll', () => {
+  if (scrollDownIndicator) {
+    if (window.pageYOffset > 100) {
+      scrollDownIndicator.classList.remove('visible');
+      clearTimeout(scrollDownTimer);
+    } else {
+      // Restart timer when at top
+      startScrollDownTimer();
+    }
+  }
+});
+
+// Start timer on page load
+startScrollDownTimer();
+
+// ============================================
+// Parallax Scrolling
+// ============================================
+
+let parallaxTicking = false;
+
+// Only run parallax on desktop and if motion is allowed
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isMobile = window.innerWidth < 768;
+
+if (!prefersReducedMotion && !isMobile) {
+  window.addEventListener('scroll', () => {
+    if (!parallaxTicking) {
+      requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.parallax');
+
+        parallaxElements.forEach(el => {
+          const speed = parseFloat(el.dataset.speed) || 0.5;
+          el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+
+        parallaxTicking = false;
+      });
+      parallaxTicking = true;
+    }
+  });
+}
+
+// ============================================
 // Smooth Scrolling for Navigation Links
 // ============================================
 
@@ -94,6 +246,82 @@ async function fetchGitHubData() {
   }
 }
 
+// Fetch GitHub statistics
+async function fetchGitHubStats() {
+  try {
+    const [userResponse, reposResponse] = await Promise.all([
+      fetch(`https://api.github.com/users/${GITHUB_USERNAME}`),
+      fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`)
+    ]);
+
+    if (!userResponse.ok || !reposResponse.ok) throw new Error('Failed to fetch GitHub stats');
+
+    const userData = await userResponse.json();
+    const repos = await reposResponse.json();
+
+    // Calculate total stars and forks
+    const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+    const totalForks = repos.reduce((sum, repo) => sum + repo.forks_count, 0);
+
+    // Find top language
+    const languageCounts = {};
+    repos.forEach(repo => {
+      if (repo.language) {
+        languageCounts[repo.language] = (languageCounts[repo.language] || 0) + 1;
+      }
+    });
+    const topLanguage = Object.keys(languageCounts).reduce((a, b) =>
+      languageCounts[a] > languageCounts[b] ? a : b, 'N/A'
+    );
+
+    return {
+      totalStars,
+      totalForks,
+      publicRepos: userData.public_repos,
+      topLanguage
+    };
+  } catch (error) {
+    console.error('Error fetching GitHub stats:', error);
+    return null;
+  }
+}
+
+// Update hero metrics
+function updateHeroMetrics(userData) {
+  const reposCount = document.getElementById('repos-count');
+  const contributionsCount = document.getElementById('contributions-count');
+
+  if (userData && userData.repos) {
+    if (reposCount) reposCount.textContent = `${userData.repos} Repos`;
+  } else {
+    if (reposCount) reposCount.textContent = 'Repos: N/A';
+  }
+
+  // Contributions are not directly available via GitHub API without authentication
+  // Using placeholder for now
+  if (contributionsCount) contributionsCount.textContent = '1000+ Contributions';
+}
+
+// Update GitHub stats section
+function updateGitHubStats(stats) {
+  const totalStarsEl = document.getElementById('total-stars');
+  const totalForksEl = document.getElementById('total-forks');
+  const publicReposEl = document.getElementById('public-repos');
+  const topLanguageEl = document.getElementById('top-language');
+
+  if (stats) {
+    if (totalStarsEl) totalStarsEl.textContent = stats.totalStars;
+    if (totalForksEl) totalForksEl.textContent = stats.totalForks;
+    if (publicReposEl) publicReposEl.textContent = stats.publicRepos;
+    if (topLanguageEl) topLanguageEl.textContent = stats.topLanguage;
+  } else {
+    if (totalStarsEl) totalStarsEl.textContent = 'N/A';
+    if (totalForksEl) totalForksEl.textContent = 'N/A';
+    if (publicReposEl) publicReposEl.textContent = 'N/A';
+    if (topLanguageEl) topLanguageEl.textContent = 'N/A';
+  }
+}
+
 // Fetch repositories
 async function fetchRepositories() {
   try {
@@ -105,6 +333,7 @@ async function fetchRepositories() {
       name: repo.name,
       description: repo.description || 'No description available',
       url: repo.html_url,
+      homepage: repo.homepage,
       language: repo.language,
       stars: repo.stargazers_count
     }));
@@ -130,7 +359,10 @@ function renderProjects(repos) {
       <div class="metadata">
         ${repo.language ? `<span class="language">${repo.language}</span>` : ''}
         <span class="stars">★ ${repo.stars}</span>
-        <a href="${repo.url}" target="_blank" rel="noopener">View →</a>
+        <div class="project-links">
+          ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener" class="project-link-button">View Live</a>` : ''}
+          <a href="${repo.url}" target="_blank" rel="noopener" class="project-link-button">View Code</a>
+        </div>
       </div>
     </article>
   `).join('');
@@ -151,6 +383,13 @@ async function initGitHub() {
   if (userData && userData.avatar) {
     updateProfilePhoto(userData.avatar);
   }
+
+  // Update hero metrics
+  updateHeroMetrics(userData);
+
+  // Fetch and update GitHub stats
+  const stats = await fetchGitHubStats();
+  updateGitHubStats(stats);
 
   // Fetch and render projects
   const repos = await fetchRepositories();
@@ -181,3 +420,30 @@ const revealObserver = new IntersectionObserver(entries => {
 revealElements.forEach(element => {
   revealObserver.observe(element);
 });
+
+// ============================================
+// Contact Form Handling
+// ============================================
+
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    const mailtoLink = `mailto:iamvishensharma@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open mailto link
+    window.location.href = mailtoLink;
+
+    // Reset form
+    contactForm.reset();
+  });
+}
