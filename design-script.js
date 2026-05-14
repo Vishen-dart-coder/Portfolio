@@ -60,6 +60,40 @@ if (backToTopButton) {
 }
 
 // ============================================
+// Scroll Down Indicator Auto-Show
+// ============================================
+
+const scrollDownIndicator = document.querySelector('.scroll-down');
+let scrollDownTimer;
+let currentSection = null;
+
+// Show scroll down indicator after user stays in a section for 3 seconds
+function startScrollDownTimer() {
+  clearTimeout(scrollDownTimer);
+  scrollDownTimer = setTimeout(() => {
+    if (scrollDownIndicator && window.pageYOffset < 500) {
+      scrollDownIndicator.classList.add('visible');
+    }
+  }, 3000);
+}
+
+// Hide scroll down indicator when user scrolls
+window.addEventListener('scroll', () => {
+  if (scrollDownIndicator) {
+    if (window.pageYOffset > 100) {
+      scrollDownIndicator.classList.remove('visible');
+      clearTimeout(scrollDownTimer);
+    } else {
+      // Restart timer when at top
+      startScrollDownTimer();
+    }
+  }
+});
+
+// Start timer on page load
+startScrollDownTimer();
+
+// ============================================
 // Parallax Scrolling
 // ============================================
 

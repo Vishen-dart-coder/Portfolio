@@ -11,6 +11,13 @@
 
 html {
   scroll-behavior: smooth;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
 }
 
 body {
@@ -435,7 +442,14 @@ header.scrolled {
   transform: translateX(-50%);
   color: var(--color-secondary);
   animation: bounce 2s infinite;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-down.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .scroll-down:hover {
