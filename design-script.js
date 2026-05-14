@@ -218,6 +218,82 @@ async function fetchGitHubData() {
   }
 }
 
+// Fetch GitHub statistics
+async function fetchGitHubStats() {
+  try {
+    const [userResponse, reposResponse] = await Promise.all([
+      fetch(`https://api.github.com/users/${GITHUB_USERNAME}`),
+      fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`)
+    ]);
+
+    if (!userResponse.ok || !reposResponse.ok) throw new Error('Failed to fetch GitHub stats');
+
+    const userData = await userResponse.json();
+    const repos = await reposResponse.json();
+
+    // Calculate total stars and forks
+    const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+    const totalForks = repos.reduce((sum, repo) => sum + repo.forks_count, 0);
+
+    // Find top language
+    const languageCounts = {};
+    repos.forEach(repo => {
+      if (repo.language) {
+        languageCounts[repo.language] = (languageCounts[repo.language] || 0) + 1;
+      }
+    });
+    const topLanguage = Object.keys(languageCounts).reduce((a, b) =>
+      languageCounts[a] > languageCounts[b] ? a : b, 'N/A'
+    );
+
+    return {
+      totalStars,
+      totalForks,
+      publicRepos: userData.public_repos,
+      topLanguage
+    };
+  } catch (error) {
+    console.error('Error fetching GitHub stats:', error);
+    return null;
+  }
+}
+
+// Update hero metrics
+function updateHeroMetrics(userData) {
+  const reposCount = document.getElementById('repos-count');
+  const contributionsCount = document.getElementById('contributions-count');
+
+  if (userData && userData.repos) {
+    if (reposCount) reposCount.textContent = `${userData.repos} Repos`;
+  } else {
+    if (reposCount) reposCount.textContent = 'Repos: N/A';
+  }
+
+  // Contributions are not directly available via GitHub API without authentication
+  // Using placeholder for now
+  if (contributionsCount) contributionsCount.textContent = '1000+ Contributions';
+}
+
+// Update GitHub stats section
+function updateGitHubStats(stats) {
+  const totalStarsEl = document.getElementById('total-stars');
+  const totalForksEl = document.getElementById('total-forks');
+  const publicReposEl = document.getElementById('public-repos');
+  const topLanguageEl = document.getElementById('top-language');
+
+  if (stats) {
+    if (totalStarsEl) totalStarsEl.textContent = stats.totalStars;
+    if (totalForksEl) totalForksEl.textContent = stats.totalForks;
+    if (publicReposEl) publicReposEl.textContent = stats.publicRepos;
+    if (topLanguageEl) topLanguageEl.textContent = stats.topLanguage;
+  } else {
+    if (totalStarsEl) totalStarsEl.textContent = 'N/A';
+    if (totalForksEl) totalForksEl.textContent = 'N/A';
+    if (publicReposEl) publicReposEl.textContent = 'N/A';
+    if (topLanguageEl) topLanguageEl.textContent = 'N/A';
+  }
+}
+
 // Fetch repositories
 async function fetchRepositories() {
   try {
@@ -275,6 +351,13 @@ async function initGitHub() {
   if (userData && userData.avatar) {
     updateProfilePhoto(userData.avatar);
   }
+
+  // Update hero metrics
+  updateHeroMetrics(userData);
+
+  // Fetch and update GitHub stats
+  const stats = await fetchGitHubStats();
+  updateGitHubStats(stats);
 
   // Fetch and render projects
   const repos = await fetchRepositories();
