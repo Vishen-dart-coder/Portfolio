@@ -13,6 +13,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const themeToggle = document.getElementById('theme-toggle');
 
+// Update favicon based on theme
+function updateFavicon(theme) {
+  const lightFavicon = document.querySelector('link[href="favicon.svg"]');
+  const darkFavicon = document.querySelector('link[href="favicon-dark.svg"]');
+
+  if (theme === 'dark') {
+    if (lightFavicon) lightFavicon.remove();
+    if (!document.querySelector('link[href="favicon-dark.svg"]')) {
+      const link = document.createElement('link');
+      link.rel = 'icon';
+      link.type = 'image/svg+xml';
+      link.href = 'favicon-dark.svg';
+      document.head.appendChild(link);
+    }
+  } else {
+    if (darkFavicon) darkFavicon.remove();
+    if (!document.querySelector('link[href="favicon.svg"]')) {
+      const link = document.createElement('link');
+      link.rel = 'icon';
+      link.type = 'image/svg+xml';
+      link.href = 'favicon.svg';
+      document.head.appendChild(link);
+    }
+  }
+}
+
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -20,6 +46,7 @@ if (themeToggle) {
 
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+    updateFavicon(newTheme);
 
     // Update ARIA label
     const isDark = newTheme === 'dark';
@@ -27,11 +54,12 @@ if (themeToggle) {
     themeToggle.setAttribute('title', isDark ? 'Toggle light mode' : 'Toggle dark mode');
   });
 
-  // Set initial ARIA label
+  // Set initial ARIA label and favicon
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const isDark = currentTheme === 'dark';
   themeToggle.setAttribute('aria-label', isDark ? 'Toggle light mode' : 'Toggle dark mode');
   themeToggle.setAttribute('title', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+  updateFavicon(currentTheme);
 }
 
 // ============================================
