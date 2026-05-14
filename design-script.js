@@ -305,6 +305,7 @@ async function fetchRepositories() {
       name: repo.name,
       description: repo.description || 'No description available',
       url: repo.html_url,
+      homepage: repo.homepage,
       language: repo.language,
       stars: repo.stargazers_count
     }));
@@ -330,7 +331,10 @@ function renderProjects(repos) {
       <div class="metadata">
         ${repo.language ? `<span class="language">${repo.language}</span>` : ''}
         <span class="stars">★ ${repo.stars}</span>
-        <a href="${repo.url}" target="_blank" rel="noopener">View →</a>
+        <div class="project-links">
+          ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener" class="project-link-button">View Live</a>` : ''}
+          <a href="${repo.url}" target="_blank" rel="noopener" class="project-link-button">View Code</a>
+        </div>
       </div>
     </article>
   `).join('');
