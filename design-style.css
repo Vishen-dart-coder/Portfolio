@@ -182,6 +182,12 @@ header.scrolled {
   padding-bottom: var(--space-sm);
 }
 
+.logo-with-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .logo {
   font-family: 'Playwrite AR', cursive;
   font-size: 18px;
