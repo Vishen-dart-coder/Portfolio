@@ -630,30 +630,66 @@ section {
    Skills Section
    ============================================ */
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
-  gap: var(--space-sm);
-  justify-items: center;
+.skills-category {
+  margin-bottom: var(--space-2xl);
 }
 
-.skills-grid img {
+.skills-category:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category-title {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.skills-grid-with-bars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.skill-item img {
   width: 48px;
   height: 48px;
   transition: transform 0.2s ease;
 }
 
-.skills-grid img:hover {
+.skill-item img:hover {
   transform: scale(1.1);
 }
 
+.skill-bar {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
 @media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
-    gap: var(--space-md);
+  .skills-grid-with-bars {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 
-  .skills-grid img {
+  .skill-item img {
     width: 56px;
     height: 56px;
   }
