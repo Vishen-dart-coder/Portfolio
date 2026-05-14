@@ -1,4 +1,31 @@
 // ============================================
+// Dark Mode Toggle
+// ============================================
+
+const themeToggle = document.getElementById('theme-toggle');
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    // Update ARIA label
+    const isDark = newTheme === 'dark';
+    themeToggle.setAttribute('aria-label', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+    themeToggle.setAttribute('title', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+  });
+
+  // Set initial ARIA label
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const isDark = currentTheme === 'dark';
+  themeToggle.setAttribute('aria-label', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+  themeToggle.setAttribute('title', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+}
+
+// ============================================
 // Smooth Scrolling for Navigation Links
 // ============================================
 
