@@ -664,8 +664,8 @@ section {
 
 .skills-grid-with-bars {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: var(--space-md);
 }
 
 .skill-item {
@@ -687,8 +687,8 @@ section {
 
 @media (min-width: 768px) {
   .skills-grid-with-bars {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: var(--space-xl);
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: var(--space-lg);
   }
 
   .skill-item img {
