@@ -331,3 +331,74 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll(); // Initial check
 });
+
+// 3D Scroll Reveal Animation
+function init3DScrollReveal() {
+  const revealElements = document.querySelectorAll('section, .featured-card, .project-card, .skill-item, .contact-form');
+  
+  revealElements.forEach(el => {
+    el.classList.add('scroll-reveal');
+  });
+  
+  const revealOnScroll = () => {
+    revealElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+      const windowHeight = window.innerHeight;
+      
+      // Reveal when element is 20% into viewport
+      if (elementTop < windowHeight * 0.8 && elementBottom > 0) {
+        element.classList.add('revealed');
+      }
+    });
+  };
+  
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll(); // Initial check
+}
+
+// Parallax Effect for Hero Section
+function initParallaxEffect() {
+  const hero = document.querySelector('.hero-section');
+  
+  if (!hero) return;
+  
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * 0.3;
+    
+    hero.style.transform = `translateY(${rate}px)`;
+  });
+}
+
+// 3D Card Tilt Effect
+function init3DCardTilt() {
+  const cards = document.querySelectorAll('.featured-card, .project-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+    });
+  });
+}
+
+// Initialize all 3D effects
+document.addEventListener('DOMContentLoaded', () => {
+  init3DScrollReveal();
+  initParallaxEffect();
+  init3DCardTilt();
+});
