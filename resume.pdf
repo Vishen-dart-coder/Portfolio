@@ -1,65 +1,762 @@
-%PDF-1.4
-1 0 obj
-<<
-/Type /Catalog
-/Pages 2 0 R
->>
-endobj
-2 0 obj
-<<
-/Type /Pages
-/Kids [3 0 R]
-/Count 1
->>
-endobj
+%PDF-1.3
+%ºß¬à
 3 0 obj
-<<
-/Type /Page
-/Parent 2 0 R
-/MediaBox [0 0 612 792]
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
 /Contents 4 0 R
-/Resources <<
-/Font <<
-/F1 5 0 R
->>
->>
 >>
 endobj
 4 0 obj
 <<
-/Length 120
+/Length 7055
 >>
 stream
+0.5670000000000001 w
+0 G
 BT
-/F1 24 Tf
-100 700 Td
-(Vishen Sharma - Resume) Tj
-0 -30 Td
-/F1 12 Tf
-(Replace this file with your actual resume) Tj
+/F2 22 Tf
+25.2999999999999972 TL
+0.039 0.086 0.157 rg
+56.6929133858267775 785.1970866141732586 Td
+(Vishen Sharma) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.333 g
+56.6929133858267775 762.5199212598424765 Td
+(+91 8169606588 | iamvishensharma@gmail.com | linkedin.com/in/vishen-sharma | github.com/Vishen-dart-coder | Mumbai, IN) Tj
+ET
+0.79 0.66 0.38 RG
+1.4173228346456694 w
+56.6929133858267775 751.1813385826770855 m
+538.5826771653544256 751.1813385826770855 l
+S
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.039 0.086 0.157 rg
+56.6929133858267775 734.1734645669291695 Td
+(PROFESSIONAL SUMMARY) Tj
+ET
+0.79 0.66 0.38 RG
+0.8503937007874016 w
+56.6929133858267775 728.5041732283464171 m
+538.5826771653544256 728.5041732283464171 l
+S
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 714.3309448818897636 Td
+(Full Stack Developer skilled in building scalable web applications with Next.js, React, TypeScript, Node.js, and) Tj
+T* (modern database technologies. Experienced in developing SaaS products, e-commerce platforms, and interactive) Tj
+T* (frontend systems with a focus on performance, clean UI, and maintainable architecture. Strong understanding of) Tj
+T* (full-stack development, API design, authentication systems, and modern deployment workflows.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.039 0.086 0.157 rg
+56.6929133858267775 646.2994488188976447 Td
+(EDUCATION) Tj
+ET
+0.79 0.66 0.38 RG
+0.8503937007874016 w
+56.6929133858267775 640.6301574803148924 m
+538.5826771653544256 640.6301574803148924 l
+S
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 626.4569291338582389 Td
+(Diploma in Computer Science) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+486.2376771653543983 626.4569291338582389 Td
+(2022 – 2030) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 612.2837007874015853 Td
+(Podar International School) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 600.9451181102361943 Td
+(GPA: 3.8) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.039 0.086 0.157 rg
+56.6929133858267775 583.9372440944881646 Td
+(CAREER OBJECTIVE) Tj
+ET
+0.79 0.66 0.38 RG
+0.8503937007874016 w
+56.6929133858267775 578.2679527559054122 m
+538.5826771653544256 578.2679527559054122 l
+S
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 564.0947244094487587 Td
+(Career Objective) Tj
+T* (To leverage my full-stack development skills in building high-performance web applications and scalable SaaS) Tj
+T* (products while contributing to innovative teams focused on product quality, user experience, and rapid execution.) Tj
+T* (Passionate about transforming ideas into production-ready solutions using modern technologies and clean) Tj
+T* (engineering practices.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.039 0.086 0.157 rg
+56.6929133858267775 481.8899999999999295 Td
+(PROFESSIONAL EXPERIENCE) Tj
+ET
+0.79 0.66 0.38 RG
+0.8503937007874016 w
+56.6929133858267775 476.220708661417234 m
+538.5826771653544256 476.220708661417234 l
+S
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 462.0474803149605805 Td
+(Software Engineer • T9GDC) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+499.8226771653543778 462.0474803149605805 Td
+(Jan 2023) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+65.1968503937007995 447.8742519685038701 Td
+(• Engineered and delivered scalable full-stack applications at T9GDC using modern technologies including) Tj
+T* (Next.js, TypeScript, Node.js, and PostgreSQL, improving application performance, user experience, and) Tj
+T* (development efficiency in a fast-paced production environment.) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 398.2679527559054691 Td
+(Founder • Careerflow-AI) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+499.8226771653543778 398.2679527559054691 Td
+(Jan 2026) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+65.1968503937007995 384.0947244094487587 Td
+(• Created the development of Careerflow-ai aAI-powered career optimization platforms at CareerFlow AI  using) Tj
+T* (Next.js, React, TypeScript, and Node.js, focusing on scalable architecture, responsive UI development, and) Tj
+T* (performance optimization.) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 334.4884251968503008 Td
+(Project Manager • Macedge) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+499.8226771653543778 334.4884251968503008 Td
+(Jan 2023) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+65.1968503937007995 320.3151968503935905 Td
+(• Developed and maintained scalable web applications at MacEdge  using Next.js, React, TypeScript, and) Tj
+T* (Node.js, focusing on responsive UI development, application performance, and modern frontend architecture.) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 283.4648031496062686 Td
+(Junior Project Manager • The Perfumes Story) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+498.302677165354396 283.4648031496062686 Td
+(Aug 2026) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+65.1968503937007995 269.2915748031495013 Td
+(• Contributed to the development of scalable e-commerce applications for The Perfume Story  using Wordpress) Tj
+T* (& Shopify focusing on responsive UI development, frontend optimization, and user experience improvements.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.039 0.086 0.157 rg
+56.6929133858267775 232.4411811023621794 Td
+(SKILLS) Tj
+ET
+0.79 0.66 0.38 RG
+0.8503937007874016 w
+56.6929133858267775 226.7718897637794271 m
+538.5826771653544256 226.7718897637794271 l
+S
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 212.5986614173227736 Td
+(Frontend Languages: ) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+156.0629133858267892 212.5986614173227736 Td
+(React, React Native, CSS, HTML, Next.js, Vue.js, Figma, Tailwind CSS, Python) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 192.7561417322833677 Td
+(Backend: ) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+101.8179133858267704 192.7561417322833677 Td
+(Node.js, Springboot, Java, PHP, Ruby, Python) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 172.9136220472439618 Td
+(DevOPS & Hosting: ) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+147.1329133858267824 172.9136220472439618 Td
+(Vercel, GCP, AWS, Supabase, Firebase, Docker, Prisma, Git, Github, MongoDB,) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.039 0.086 0.157 rg
+56.6929133858267775 147.4018110236219172 Td
+(PROJECTS) Tj
+ET
+0.79 0.66 0.38 RG
+0.8503937007874016 w
+56.6929133858267775 141.7325196850392786 m
+538.5826771653544256 141.7325196850392786 l
+S
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 127.559291338582625 Td
+(Perplexity_Remake) Tj
+ET
+BT
+/F3 8.5 Tf
+9.7749999999999986 TL
+0.4 g
+56.6929133858267775 116.220708661417234 Td
+(Bun, Typescript) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 90.7088976377951894 Td
+(Portfolio Website) Tj
+ET
+BT
+/F3 8.5 Tf
+9.7749999999999986 TL
+0.4 g
+56.6929133858267775 79.3703149606297984 Td
+(HTML, CSS, JAVASCRIPT) Tj
 ET
 endstream
 endobj
 5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 4086
+>>
+stream
+0.8503937007874016 w
+0.79 0.66 0.38 RG
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 785.1970866141732586 Td
+(Jarvis) Tj
+ET
+BT
+/F3 8.5 Tf
+9.7749999999999986 TL
+0.4 g
+56.6929133858267775 773.8585039370078675 Td
+(Python) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.039 0.086 0.157 rg
+56.6929133858267775 748.346692913385823 Td
+(CERTIFICATIONS) Tj
+ET
+0.79 0.66 0.38 RG
+0.8503937007874016 w
+56.6929133858267775 742.6774015748030706 m
+538.5826771653544256 742.6774015748030706 l
+S
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 728.5041732283464171 Td
+(AWS CLOUD PRACTITIONER) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+498.7776771653543619 728.5041732283464171 Td
+(Feb 2025) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 717.1655905511811397 Td
+(AWS SKILLBUILDER) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 700.15771653543311 Td
+(Certified MS-Excel) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+500.3926771653544279 700.15771653543311 Td
+(Apr 2026) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 688.819133858267719 Td
+(Softpro DMTI) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 671.8112598425196893 Td
+(Computer Systems) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+500.3926771653544279 671.8112598425196893 Td
+(Apr 2026) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 660.4726771653542983 Td
+(Udemy) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 643.4648031496062686 Td
+(MERN Certification) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+500.3926771653544279 643.4648031496062686 Td
+(Apr 2026) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 632.1262204724408775 Td
+(Udemy) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.039 0.086 0.157 rg
+56.6929133858267775 615.1183464566928478 Td
+(AWARDS & HONORS) Tj
+ET
+0.79 0.66 0.38 RG
+0.8503937007874016 w
+56.6929133858267775 609.4490551181102092 m
+538.5826771653544256 609.4490551181102092 l
+S
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 595.2758267716535556 Td
+(Product Development Focus) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+517.6826771653543346 595.2758267716535556 Td
+(2022) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 583.9372440944881646 Td
+(Outstanding Full Stack Development Contribution — Recognized for delivering scalable web applications, modern) Tj
+T* (UI/UX implementations, and high-performance digital solutions across multiple production projects.) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 547.086850393700729 Td
+(Innovation & Product Excellence Award) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+517.6826771653543346 547.086850393700729 Td
+(2022) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 535.748267716535338 Td
+(Awarded for contributing to the development of modern SaaS and AI-driven platforms through efficient full-stack) Tj
+T* (engineering and rapid product execution.) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 498.8978740157479592 Td
+(Technical Excellence Recognition) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+517.6826771653543346 498.8978740157479592 Td
+(2023) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 487.559291338582625 Td
+(Acknowledged for strong problem-solving skills, frontend optimization, and scalable application development using) Tj
+T* (modern JavaScript frameworks and backend technologies.) Tj
+ET
+BT
+/F2 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 450.7088976377952463 Td
+(Employee Recognition for Engineering Contribution) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.533 g
+517.6826771653543346 450.7088976377952463 Td
+(2023) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.2 g
+56.6929133858267775 439.3703149606298552 Td
+(Recognized for building responsive, production-ready web applications and consistently delivering high-quality) Tj
+T* (features in fast-paced development environments.) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R ]
+/Count 2
+>>
+endobj
+7 0 obj
 <<
 /Type /Font
-/Subtype /Type1
 /BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+/F6 12 0 R
+/F7 13 0 R
+/F8 14 0 R
+/F9 15 0 R
+/F10 16 0 R
+/F11 17 0 R
+/F12 18 0 R
+/F13 19 0 R
+/F14 20 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+21 0 obj
+<<
+/Producer (jsPDF 4.2.1)
+/CreationDate (D:20260513211104+05'30')
+>>
+endobj
+22 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
 >>
 endobj
 xref
-0 6
-0000000000 65535 f
-0000000009 00000 n
-0000000058 00000 n
-0000000115 00000 n
-0000000272 00000 n
-0000000442 00000 n
+0 23
+0000000000 65535 f 
+0000011534 00000 n 
+0000013359 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000007259 00000 n 
+0000007396 00000 n 
+0000011597 00000 n 
+0000011722 00000 n 
+0000011852 00000 n 
+0000011985 00000 n 
+0000012123 00000 n 
+0000012247 00000 n 
+0000012376 00000 n 
+0000012508 00000 n 
+0000012644 00000 n 
+0000012772 00000 n 
+0000012899 00000 n 
+0000013028 00000 n 
+0000013161 00000 n 
+0000013263 00000 n 
+0000013609 00000 n 
+0000013695 00000 n 
 trailer
 <<
-/Size 6
-/Root 1 0 R
+/Size 23
+/Root 22 0 R
+/Info 21 0 R
+/ID [ <C9DCBDB431F928522A93482CF389C7EC> <C9DCBDB431F928522A93482CF389C7EC> ]
 >>
 startxref
-527
+13799
 %%EOF
