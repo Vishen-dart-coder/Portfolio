@@ -188,11 +188,11 @@ export const DATA = {
   name: "Vishen Sharma",
   initials: "VS",
   url: "https://vishen-portfolio.vercel.app",
-  location: "India",
-  locationLink: "https://www.google.com/maps/place/india",
+  location: "Netherlands",
+  locationLink: "https://www.google.com/maps/place/netherlands",
   description:
-    "Vishen Sharma builds web apps, AI tools and the systems under them. Based in India.",
-  intro: "I'm Vishen Sharma, based in India",
+    "Vishen Sharma builds web apps, AI tools and the systems under them. Based in the Netherlands.",
+  intro: "I'm Vishen Sharma, based in the Netherlands",
   summary:
     "I ship production apps like [CareerFlow AI](https://careerflow-ai.org.in) and [Archive360](https://archive360.co), and in my spare time I build the pieces underneath them, from a [database engine](https://github.com/Vishen-dart-coder/db-from-scratch-in-js) to a [local AI agent](https://github.com/Vishen-dart-coder/GrokBot). Most days I'm deep in React, Next.js and TypeScript, and I care about interfaces that feel fast and honest.",
   avatarUrl: "/me.jpg",
