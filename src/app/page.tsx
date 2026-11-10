@@ -32,6 +32,16 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 text={DATA.intro}
               />
+              <BlurFade delay={BLUR_FADE_DELAY * 2}>
+                <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-3">
+                  {DATA.stats.map((stat) => (
+                    <div key={stat.label} className="flex flex-col gap-1">
+                      <dt className="order-2 font-mono text-xs text-muted-foreground">{stat.label}</dt>
+                      <dd className="order-1 text-2xl font-medium tabular-nums leading-none">{stat.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
               <Avatar className="size-24 md:size-32 border rounded-full">
@@ -122,12 +132,24 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-medium">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-2">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + Math.min(id, 12) * 0.03}>
-                <div className="group/skill border bg-background border-border rounded-xl h-8 w-fit px-4 flex items-center gap-2 transition-colors duration-150 ease-out hover:bg-muted hover:border-foreground/20">
-                  {skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain transition-transform duration-200 ease-out group-hover/skill:-translate-y-px group-hover/skill:scale-110 motion-reduce:transform-none" />}
-                  <span className="text-foreground text-sm font-medium">{skill.name}</span>
+          <div className="flex flex-col gap-5">
+            {DATA.skillGroups.map((group, gi) => (
+              <BlurFade key={group} delay={BLUR_FADE_DELAY * 10 + gi * 0.04}>
+                <div className="grid gap-2 sm:grid-cols-[148px_1fr] sm:gap-4">
+                  <p className="pt-1.5 font-mono text-xs text-muted-foreground">{group}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {DATA.skills
+                      .filter((skill) => skill.group === group)
+                      .map((skill) => (
+                        <div
+                          key={skill.name}
+                          className="group/skill border bg-background border-border rounded-lg h-8 w-fit px-3 flex items-center gap-2 transition-colors duration-150 ease-out hover:bg-muted hover:border-foreground/20"
+                        >
+                          {skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain transition-transform duration-200 ease-out group-hover/skill:-translate-y-px group-hover/skill:scale-110 motion-reduce:transform-none" />}
+                          <span className="text-foreground text-sm">{skill.name}</span>
+                        </div>
+                      ))}
+                  </div>
                 </div>
               </BlurFade>
             ))}
