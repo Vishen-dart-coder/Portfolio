@@ -289,6 +289,15 @@ export const DATA = {
     },
     {
       title: "GrokBot Local",
+      ship: {
+        summary: "Shipped in 23 h · 11 commits",
+        steps: [
+          { name: "First commit: desktop agent on Ollama", timestamp: "29 Sep 2026, 02:17 IST", isCompleted: true },
+          { name: "Packaged as a macOS app", timestamp: "29 Sep 2026, 03:26 IST", isCompleted: true },
+          { name: "DMG releases published by CI", timestamp: "29 Sep 2026, 12:01 IST", isCompleted: true },
+          { name: "Shipped: model switcher, regenerate, export", timestamp: "30 Sep 2026, 01:29 IST", isCompleted: true },
+        ],
+      },
       href: "https://github.com/Vishen-dart-coder/GrokBot",
       dates: "Open source",
       active: true,
@@ -325,6 +334,14 @@ export const DATA = {
     },
     {
       title: "ox-alpha",
+      ship: {
+        summary: "Shipped in 48 min · 4 commits",
+        steps: [
+          { name: "First commit: TUI chat client", timestamp: "23 Aug 2026, 20:27 IST", isCompleted: true },
+          { name: "Polished the TUI, added README", timestamp: "23 Aug 2026, 21:07 IST", isCompleted: true },
+          { name: "Shipped with demo GIF", timestamp: "23 Aug 2026, 21:15 IST", isCompleted: true },
+        ],
+      },
       href: "https://github.com/Vishen-dart-coder/ox-alpha",
       dates: "Open source",
       active: true,
@@ -343,6 +360,13 @@ export const DATA = {
     },
     {
       title: "Halftone Donut",
+      ship: {
+        summary: "Shipped in 11 min · 4 commits",
+        steps: [
+          { name: "First commit: halftone renderer", timestamp: "27 Aug 2026, 13:43 IST", isCompleted: true },
+          { name: "Shipped with README and demo", timestamp: "27 Aug 2026, 13:54 IST", isCompleted: true },
+        ],
+      },
       href: "https://github.com/Vishen-dart-coder/Donut-Animation",
       dates: "Open source",
       active: true,
@@ -379,6 +403,14 @@ export const DATA = {
     },
     {
       title: "Baseline",
+      ship: {
+        summary: "Shipped in 51 min · 6 commits",
+        steps: [
+          { name: "First commit", timestamp: "27 Aug 2026, 12:32 IST", isCompleted: true },
+          { name: "Fixed image paths and run steps", timestamp: "27 Aug 2026, 12:37 IST", isCompleted: true },
+          { name: "Shipped", timestamp: "27 Aug 2026, 13:23 IST", isCompleted: true },
+        ],
+      },
       href: "https://github.com/Vishen-dart-coder/Baseline",
       dates: "Open source",
       active: true,

@@ -2,6 +2,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { OrderTracking } from "@/components/ui/order-tracking";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -41,6 +42,10 @@ interface Props {
   }[];
   className?: string;
   featured?: boolean;
+  ship?: {
+    summary: string;
+    steps: readonly { name: string; timestamp: string; isCompleted: boolean }[];
+  };
 }
 
 export function ProjectCard({
@@ -55,6 +60,7 @@ export function ProjectCard({
   links,
   className,
   featured = false,
+  ship,
 }: Props) {
   return (
     <div
@@ -152,6 +158,15 @@ export function ProjectCard({
         </div>
         {tags && tags.length > 0 && (
           <p className="mt-auto font-mono text-xs text-muted-foreground">{tags.join(" · ")}</p>
+        )}
+        {ship && (
+          <details className="group/ship relative z-20 border-t pt-3">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-2 font-mono text-xs text-muted-foreground transition-colors duration-150 hover:text-foreground [&::-webkit-details-marker]:hidden">
+              {ship.summary}
+              <span aria-hidden className="transition-transform duration-200 ease-out group-open/ship:rotate-45">+</span>
+            </summary>
+            <OrderTracking steps={[...ship.steps]} className="mt-4 [&>div>div:last-child>div:last-child]:pb-0" />
+          </details>
         )}
       </div>
     </div>

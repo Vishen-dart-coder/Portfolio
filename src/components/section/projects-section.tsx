@@ -29,6 +29,7 @@ export default function ProjectsSection() {
                 image={project.image}
                 video={project.video}
                 links={project.links}
+                ship={"ship" in project ? project.ship : undefined}
               />
             </BlurFade>
           ))}
@@ -49,6 +50,7 @@ export default function ProjectsSection() {
                 image={project.image}
                 video={project.video}
                 links={project.links}
+                ship={"ship" in project ? project.ship : undefined}
               />
             </BlurFade>
           ))}
