@@ -144,6 +144,8 @@ const certifications: Certification[] = [
   { kind: "certification", name: "Azure Developer Associate", issuer: "Microsoft", date: "May 2026", logoUrl: "/logos/microsoft.png" },
   { kind: "certification", name: "Azure AI Engineer Associate", issuer: "Microsoft", date: "May 2026", logoUrl: "/logos/microsoft.png" },
   { kind: "certification", name: "Security+ ce", issuer: "CompTIA", date: "May 2026", logoUrl: "/logos/comptia.png" },
+  { kind: "course", name: "Claude Code 101", issuer: "Anthropic", date: "Jun 2026", logoUrl: "/logos/anthropic.png" },
+  { kind: "course", name: "Claude Platform 101", issuer: "Anthropic", date: "Jun 2026", logoUrl: "/logos/anthropic.png" },
   { kind: "course", name: "AWS Cloud Practitioner Essentials", issuer: "AWS Training & Certification", date: "Jun 2026", logoUrl: "/logos/aws-skill-builder.png" },
   { kind: "course", name: "Operating Systems from Scratch, Part 1", issuer: "Udemy · Vignesh Sekar", date: "Apr 2026", logoUrl: "/logos/udemy.png" },
   { kind: "course", name: "Operating Systems from Scratch, Part 2", issuer: "Udemy · Vignesh Sekar", date: "Apr 2026", logoUrl: "/logos/udemy.png" },
