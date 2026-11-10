@@ -154,11 +154,11 @@ const certifications: Certification[] = [
   { kind: "course", name: "Certified MS Excel", issuer: "Softpro Computer Education", date: "2026", logoUrl: "" },
 ];
 const hackathons: Hackathon[] = [
-  { title: "AWS", dates: "", location: "Las Vegas", description: "", image: "/logos/aws.png", links: [] },
-  { title: "AWS", dates: "", location: "Mumbai", description: "", image: "/logos/aws.png", links: [] },
-  { title: "AWS", dates: "", location: "Bangalore", description: "", image: "/logos/aws.png", links: [] },
-  { title: "Anthropic community event", dates: "", location: "", description: "", image: "/logos/anthropic.png", links: [] },
-  { title: "Codex event", dates: "", location: "", description: "", image: "/logos/openai.png", links: [] },
+  { title: "AWS", dates: "2026", location: "Las Vegas", description: "", image: "/logos/aws.png", links: [] },
+  { title: "AWS", dates: "2026", location: "Mumbai", description: "", image: "/logos/aws.png", links: [] },
+  { title: "AWS", dates: "2026", location: "Bangalore", description: "", image: "/logos/aws.png", links: [] },
+  { title: "Anthropic community event", dates: "2026", location: "", description: "", image: "/logos/anthropic.png", links: [] },
+  { title: "Codex event", dates: "2026", location: "", description: "", image: "/logos/openai.png", links: [] },
   { title: "Inter-House Tech-Quest, third place", dates: "Apr 2025", location: "Podar International School", description: "", image: "/logos/podar.jpg", links: [] },
 ];
 
