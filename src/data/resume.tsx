@@ -75,6 +75,18 @@ const work: Work[] = [
       "Completed practical tasks in advanced data structures, software architecture, relational database design and data munging.",
   },
   {
+    company: "Deloitte",
+    href: "https://www.theforage.com",
+    badges: [],
+    location: "Virtual",
+    title: "Data Analytics Virtual Internship",
+    logoUrl: "/logos/deloitte.png",
+    start: "Jun 2026",
+    end: "Jul 2026",
+    description:
+      "Completed practical tasks in data analysis and forensic technology.",
+  },
+  {
     company: "Wells Fargo",
     href: "https://www.theforage.com",
     badges: [],
