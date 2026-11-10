@@ -117,43 +117,36 @@ const education: Education[] = [
   {
     school: "Podar International School",
     href: "https://www.podareducation.org",
-    degree: "IGCSE",
+    degree: "IB & Cambridge International (IGCSE)",
     logoUrl: "/logos/podar.jpg",
     start: "",
     end: "",
   },
-  {
-    school: "AWS Skill Builder",
-    href: "https://skillbuilder.aws",
-    degree: "Cloud Practitioner, Developer and Solutions Architect tracks",
-    logoUrl: "/logos/aws-skill-builder.png",
-    start: "",
-    end: "",
-  },
-  {
-    school: "Google Cloud certificate program",
-    href: "https://cloud.google.com/learn/certification",
-    degree: "Google Cloud certification",
-    logoUrl: "/logos/google-cloud.png",
-    start: "",
-    end: "",
-  },
-  {
-    school: "Udemy",
-    href: "https://www.udemy.com",
-    degree: "Online courses",
-    logoUrl: "/logos/udemy.png",
-    start: "",
-    end: "",
-  },
-  {
-    school: "Other certifications",
-    href: "https://github.com/Vishen-dart-coder",
-    degree: "Azure AI Engineer, Kubernetes",
-    logoUrl: "/logos/microsoft.png",
-    start: "",
-    end: "",
-  },
+];
+
+type Certification = {
+  name: string;
+  issuer: string;
+  date: string;
+  logoUrl: string;
+  href?: string;
+  kind: "certification" | "course";
+};
+
+// Dates are as printed on each certificate. Add each credential's verification link as `href`.
+const certifications: Certification[] = [
+  { kind: "certification", name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "2026", logoUrl: "/logos/aws.png" },
+  { kind: "certification", name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "May 2026", logoUrl: "/logos/aws.png" },
+  { kind: "certification", name: "AWS Certified AI Practitioner", issuer: "Amazon Web Services", date: "May 2026", logoUrl: "/logos/aws.png" },
+  { kind: "certification", name: "Professional Cloud Developer", issuer: "Google Cloud", date: "May 2026", logoUrl: "/logos/google-cloud.png" },
+  { kind: "certification", name: "Professional Machine Learning Engineer", issuer: "Google Cloud", date: "2026", logoUrl: "/logos/google-cloud.png" },
+  { kind: "certification", name: "Certified Kubernetes Application Developer (CKAD)", issuer: "Cloud Native Computing Foundation", date: "May 2026", logoUrl: "/logos/cncf.png" },
+  { kind: "certification", name: "Azure Developer Associate", issuer: "Microsoft", date: "May 2026", logoUrl: "/logos/microsoft.png" },
+  { kind: "certification", name: "Azure AI Engineer Associate", issuer: "Microsoft", date: "May 2026", logoUrl: "/logos/microsoft.png" },
+  { kind: "certification", name: "Security+ ce", issuer: "CompTIA", date: "May 2026", logoUrl: "/logos/comptia.png" },
+  { kind: "course", name: "AWS Cloud Practitioner Essentials", issuer: "AWS Training & Certification", date: "Jun 2026", logoUrl: "/logos/aws-skill-builder.png" },
+  { kind: "course", name: "Operating Systems from Scratch, Parts 1–4", issuer: "Udemy", date: "Apr 2026", logoUrl: "/logos/udemy.png" },
+  { kind: "course", name: "Certified MS Excel", issuer: "Softpro Computer Education", date: "2026", logoUrl: "" },
 ];
 const hackathons: Hackathon[] = [
   { title: "AWS", dates: "", location: "Las Vegas", description: "", image: "/logos/aws.png", links: [] },
@@ -161,6 +154,7 @@ const hackathons: Hackathon[] = [
   { title: "AWS", dates: "", location: "Bangalore", description: "", image: "/logos/aws.png", links: [] },
   { title: "Anthropic community event", dates: "", location: "", description: "", image: "/logos/anthropic.png", links: [] },
   { title: "Codex event", dates: "", location: "", description: "", image: "/logos/openai.png", links: [] },
+  { title: "Inter-House Tech-Quest, third place", dates: "Apr 2025", location: "Podar International School", description: "", image: "/logos/podar.jpg", links: [] },
 ];
 
 const social: Record<string, Social> = {
@@ -248,6 +242,7 @@ export const DATA = {
   },
   work,
   education,
+  certifications,
   projects: [
     {
       title: "CareerFlow AI",

@@ -127,6 +127,57 @@ export default function Page() {
         </div>
       </section>
       )}
+      {DATA.certifications.length > 0 && (
+      <section id="certifications">
+        <div className="flex min-h-0 flex-col gap-y-6">
+          <BlurFade delay={BLUR_FADE_DELAY * 8}>
+            <h2 className="text-xl font-medium">Certifications</h2>
+          </BlurFade>
+          {(["certification", "course"] as const).map((kind) => (
+            <BlurFade key={kind} delay={BLUR_FADE_DELAY * 8.5}>
+              <div className="flex flex-col gap-2">
+                <p className="font-mono text-xs text-muted-foreground">
+                  {kind === "certification" ? "Professional" : "Courses"}
+                </p>
+                <ul className="divide-y divide-border border-y border-border">
+                  {DATA.certifications
+                    .filter((c) => c.kind === kind)
+                    .map((c) => {
+                      const row = (
+                        <>
+                          {c.logoUrl ? (
+                            <img src={c.logoUrl} alt="" className="size-8 shrink-0 rounded-full border bg-white object-cover" />
+                          ) : (
+                            <div className="size-8 shrink-0 rounded-full border bg-card flex items-center justify-center text-xs font-medium text-muted-foreground">
+                              {c.issuer.charAt(0)}
+                            </div>
+                          )}
+                          <div className="min-w-0 flex-1">
+                            <p className="text-sm font-medium leading-snug">{c.name}</p>
+                            <p className="text-xs text-muted-foreground">{c.issuer}</p>
+                          </div>
+                          <span className="shrink-0 font-mono text-xs tabular-nums text-muted-foreground">{c.date}</span>
+                        </>
+                      );
+                      return (
+                        <li key={c.name}>
+                          {c.href ? (
+                            <Link href={c.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 py-3 transition-colors duration-150 hover:text-foreground">
+                              {row}
+                            </Link>
+                          ) : (
+                            <div className="flex items-center gap-3 py-3">{row}</div>
+                          )}
+                        </li>
+                      );
+                    })}
+                </ul>
+              </div>
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      )}
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
