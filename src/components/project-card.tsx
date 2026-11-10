@@ -56,11 +56,37 @@ export function ProjectCard({
 }: Props) {
   return (
     <div
+      onPointerMove={(e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty("--x", `${e.clientX - r.left}px`);
+        e.currentTarget.style.setProperty("--y", `${e.clientY - r.top}px`);
+      }}
       className={cn(
-        "flex flex-col h-full border border-border rounded-xl overflow-hidden hover:bg-muted/40 transition-colors duration-150",
+        "group/card relative flex flex-col h-full border border-border rounded-xl overflow-hidden transition-[background-color,transform] duration-150 ease-out hover:bg-muted/30 active:scale-[0.995]",
         className
       )}
     >
+      {/* Cursor spotlight: a soft neutral light on the surface and a brighter one on the border */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-10 rounded-xl opacity-0 transition-opacity duration-300 group-hover/card:opacity-100 motion-reduce:hidden"
+        style={{
+          background:
+            "radial-gradient(360px circle at var(--x, 50%) var(--y, 50%), color-mix(in oklab, var(--foreground) 5%, transparent), transparent 60%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-10 rounded-xl opacity-0 transition-opacity duration-300 group-hover/card:opacity-100 motion-reduce:hidden"
+        style={{
+          padding: 1,
+          background:
+            "radial-gradient(240px circle at var(--x, 50%) var(--y, 50%), color-mix(in oklab, var(--foreground) 35%, transparent), transparent 70%)",
+          WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+          WebkitMaskComposite: "xor",
+          mask: "linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0)",
+        }}
+      />
       <div className="relative shrink-0">
         <Link
           href={href || "#"}
