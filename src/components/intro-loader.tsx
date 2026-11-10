@@ -3,11 +3,8 @@
 import { GlassIconReveal } from "@/components/ui/liquid-glass-logo-reveal";
 import { useEffect, useState } from "react";
 
-// Vishen's VS monogram, taken from the original portfolio favicon (background tile removed).
-const VS_MARK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 12 36 40" fill="none">
-  <path d="M20 16 L32 40 L44 16" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M22 48 Q28 44 28 48 T34 48 Q40 44 40 48" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-</svg>`;
+// Vishen's VS monogram: a rounded V and S drawn with one stroke weight, touching to read as one mark.
+const VS_MARK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 100" fill="none" stroke="#000" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14 L32 86 L54 14"/><path d="M102 24 C97 14 84 12 76 12 C64 12 58 20 58 30 C58 42 70 46 80 49 C92 52 102 56 102 69 C102 80 94 88 80 88 C70 88 62 84 58 76"/></svg>`;
 
 const SPEED = 1.4;
 // The reveal runs 3.5s at speed 1, then the overlay fades out.
