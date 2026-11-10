@@ -9,6 +9,17 @@ import { Python } from "@/components/ui/svgs/python";
 import { Golang } from "@/components/ui/svgs/golang";
 import { Postgresql } from "@/components/ui/svgs/postgresql";
 import { Docker } from "@/components/ui/svgs/docker";
+import { Kubernetes } from "@/components/ui/svgs/kubernetes";
+
+function iconImage(src: string, invertInDark = false) {
+  function SkillIcon({ className }: { className?: string }) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src={src} alt="" className={[className, invertInDark ? "dark:invert" : ""].join(" ")} />
+    );
+  }
+  return SkillIcon;
+}
 
 type Work = {
   company: string;
@@ -167,7 +178,23 @@ export const DATA = {
     { name: "Python", icon: Python },
     { name: "Go", icon: Golang },
     { name: "Postgres", icon: Postgresql },
+    { name: "JavaScript", icon: iconImage("/skills/javascript.svg") },
+    { name: "Tailwind CSS", icon: iconImage("/skills/tailwindcss.svg") },
+    { name: "Express", icon: iconImage("/skills/express.svg", true) },
+    { name: "FastAPI", icon: iconImage("/skills/fastapi.svg") },
+    { name: "MongoDB", icon: iconImage("/skills/mongodb.svg") },
+    { name: "Electron", icon: iconImage("/skills/electron.svg") },
+    { name: "Swift", icon: iconImage("/skills/swift.svg") },
+    { name: "Ollama", icon: iconImage("/skills/ollama.svg", true) },
     { name: "Docker", icon: Docker },
+    { name: "Kubernetes", icon: Kubernetes },
+    { name: "AWS", icon: iconImage("/skills/aws.png") },
+    { name: "Google Cloud", icon: iconImage("/skills/googlecloud.svg") },
+    { name: "Azure", icon: iconImage("/skills/azure.png") },
+    { name: "Linux", icon: iconImage("/skills/linux.svg") },
+    { name: "Git", icon: iconImage("/skills/git.svg") },
+    { name: "GitHub Actions", icon: iconImage("/skills/githubactions.svg") },
+    { name: "Vercel", icon: iconImage("/skills/vercel.svg", true) },
   ],
   navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
