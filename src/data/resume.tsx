@@ -1,5 +1,18 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon } from "lucide-react";
+import {
+  Binary,
+  ChartLine,
+  ChartPie,
+  Database,
+  Filter,
+  HomeIcon,
+  Layers,
+  Network,
+  Shapes,
+  Sheet,
+  TableProperties,
+  Workflow,
+} from "lucide-react";
 import type { ComponentType, ReactNode, SVGProps } from "react";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
@@ -7,6 +20,7 @@ import { Typescript } from "@/components/ui/svgs/typescript";
 import { Nodejs } from "@/components/ui/svgs/nodejs";
 import { Python } from "@/components/ui/svgs/python";
 import { Golang } from "@/components/ui/svgs/golang";
+import { Java } from "@/components/ui/svgs/java";
 import { Postgresql } from "@/components/ui/svgs/postgresql";
 import { Docker } from "@/components/ui/svgs/docker";
 import { Kubernetes } from "@/components/ui/svgs/kubernetes";
@@ -189,6 +203,8 @@ export const DATA = {
     { name: "Node.js", icon: Nodejs },
     { name: "Python", icon: Python },
     { name: "Go", icon: Golang },
+    { name: "Java", icon: Java },
+    { name: "SQL", icon: TableProperties },
     { name: "Postgres", icon: Postgresql },
     { name: "JavaScript", icon: iconImage("/skills/javascript.svg") },
     { name: "Tailwind CSS", icon: iconImage("/skills/tailwindcss.svg") },
@@ -207,6 +223,16 @@ export const DATA = {
     { name: "Git", icon: iconImage("/skills/git.svg") },
     { name: "GitHub Actions", icon: iconImage("/skills/githubactions.svg") },
     { name: "Vercel", icon: iconImage("/skills/vercel.svg", true) },
+    { name: "Microsoft Excel", icon: Sheet },
+    { name: "System Design", icon: Network },
+    { name: "Software Architecture", icon: Layers },
+    { name: "Database Design", icon: Database },
+    { name: "Algorithms & Data Structures", icon: Binary },
+    { name: "UML Modeling", icon: Shapes },
+    { name: "Data Analysis", icon: ChartLine },
+    { name: "Data Visualization", icon: ChartPie },
+    { name: "Data Preparation", icon: Filter },
+    { name: "Process Improvement", icon: Workflow },
   ],
   navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
