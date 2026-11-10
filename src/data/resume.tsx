@@ -50,7 +50,32 @@ type Social = {
 };
 
 // Add entries here later. Each section stays hidden while its list is empty.
-const work: Work[] = [];
+const work: Work[] = [
+  {
+    company: "Walmart Global Tech",
+    href: "https://www.theforage.com",
+    badges: [],
+    location: "Virtual",
+    title: "Advanced Software Engineering Virtual Internship",
+    logoUrl: "/logos/walmart.png",
+    start: "Jul 2026",
+    end: "Jul 2026",
+    description:
+      "Completed practical tasks in advanced data structures, software architecture, relational database design and data munging.",
+  },
+  {
+    company: "Wells Fargo",
+    href: "https://www.theforage.com",
+    badges: [],
+    location: "Virtual",
+    title: "Software Engineering Virtual Internship",
+    logoUrl: "/logos/wells-fargo.png",
+    start: "Jun 2026",
+    end: "Jun 2026",
+    description:
+      "Designed a data model and implemented it in code.",
+  },
+];
 const education: Education[] = [
   {
     school: "Podar International School",
