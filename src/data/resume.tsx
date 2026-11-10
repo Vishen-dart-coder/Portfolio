@@ -145,7 +145,10 @@ const certifications: Certification[] = [
   { kind: "certification", name: "Azure AI Engineer Associate", issuer: "Microsoft", date: "May 2026", logoUrl: "/logos/microsoft.png" },
   { kind: "certification", name: "Security+ ce", issuer: "CompTIA", date: "May 2026", logoUrl: "/logos/comptia.png" },
   { kind: "course", name: "AWS Cloud Practitioner Essentials", issuer: "AWS Training & Certification", date: "Jun 2026", logoUrl: "/logos/aws-skill-builder.png" },
-  { kind: "course", name: "Operating Systems from Scratch, Parts 1–4", issuer: "Udemy", date: "Apr 2026", logoUrl: "/logos/udemy.png" },
+  { kind: "course", name: "Operating Systems from Scratch, Part 1", issuer: "Udemy · Vignesh Sekar", date: "Apr 2026", logoUrl: "/logos/udemy.png" },
+  { kind: "course", name: "Operating Systems from Scratch, Part 2", issuer: "Udemy · Vignesh Sekar", date: "Apr 2026", logoUrl: "/logos/udemy.png" },
+  { kind: "course", name: "Operating Systems Part 3: Synchronization and Deadlock", issuer: "Udemy · Vignesh Sekar", date: "Apr 2026", logoUrl: "/logos/udemy.png" },
+  { kind: "course", name: "Operating Systems Final Part (4): File Systems & Threads", issuer: "Udemy · Vignesh Sekar", date: "Apr 2026", logoUrl: "/logos/udemy.png" },
   { kind: "course", name: "Certified MS Excel", issuer: "Softpro Computer Education", date: "2026", logoUrl: "" },
 ];
 const hackathons: Hackathon[] = [
