@@ -28,7 +28,7 @@ export default function HackathonsSection() {
                   <img
                     src={hackathon.image}
                     alt={hackathon.title}
-                    className="size-10 bg-card z-10 shrink-0 overflow-hidden p-1 border rounded-full shadow ring-2 ring-border object-contain flex-none"
+                    className="size-10 bg-white z-10 shrink-0 overflow-hidden border rounded-full object-cover flex-none"
                   />
                 ) : (
                   <div className="size-10 bg-card z-10 shrink-0 border rounded-full flex-none flex items-center justify-center text-sm font-medium text-muted-foreground">

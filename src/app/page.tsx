@@ -90,7 +90,7 @@ export default function Page() {
                       <img
                         src={education.logoUrl}
                         alt={education.school}
-                        className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
+                        className="size-8 md:size-10 border rounded-full overflow-hidden object-cover bg-white flex-none"
                       />
                     ) : (
                       <div className="size-8 md:size-10 border rounded-full bg-muted flex-none flex items-center justify-center text-sm font-medium text-muted-foreground">
