@@ -4,6 +4,7 @@ import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
+import { Timeline, TimelineConnectItem, TimelineItem } from "@/components/timeline";
 import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
 import HackathonsSection from "@/components/section/hackathons-section";
@@ -73,51 +74,46 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <h2 className="text-xl font-medium">Education</h2>
           </BlurFade>
-          <div className="flex flex-col gap-8">
-            {DATA.education.map((education, index) => (
-              <BlurFade
-                key={education.school}
-                delay={BLUR_FADE_DELAY * 8 + index * 0.05}
-              >
+          <Timeline>
+            {DATA.education.map((education) => (
+              <TimelineItem key={education.school} className="w-full flex items-start justify-between gap-10">
+                <TimelineConnectItem className="flex items-start justify-center">
+                  {education.logoUrl ? (
+                    <img
+                      src={education.logoUrl}
+                      alt={education.school}
+                      className="size-10 bg-white z-10 shrink-0 overflow-hidden border rounded-full object-cover flex-none"
+                    />
+                  ) : (
+                    <div className="size-10 bg-card z-10 shrink-0 border rounded-full flex-none flex items-center justify-center text-sm font-medium text-muted-foreground">
+                      {education.school.charAt(0)}
+                    </div>
+                  )}
+                </TimelineConnectItem>
                 <Link
                   href={education.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-x-3 justify-between group"
+                  className="group flex flex-1 items-start justify-between gap-x-3 min-w-0"
                 >
-                  <div className="flex items-center gap-x-3 flex-1 min-w-0">
-                    {education.logoUrl ? (
-                      <img
-                        src={education.logoUrl}
-                        alt={education.school}
-                        className="size-8 md:size-10 border rounded-full overflow-hidden object-cover bg-white flex-none"
-                      />
-                    ) : (
-                      <div className="size-8 md:size-10 border rounded-full bg-muted flex-none flex items-center justify-center text-sm font-medium text-muted-foreground">
-                        {education.school.charAt(0)}
-                      </div>
-                    )}
-                    <div className="flex-1 min-w-0 flex flex-col gap-0.5">
-                      <div className="font-medium leading-none flex items-center gap-2">
-                        {education.school}
-                        <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-[opacity,transform] duration-200" aria-hidden />
-                      </div>
-                      <div className="font-sans text-sm text-muted-foreground">
-                        {education.degree}
-                      </div>
+                  <div className="flex-1 min-w-0 flex flex-col gap-1">
+                    <div className="font-medium leading-none flex items-center gap-2">
+                      {education.school}
+                      <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-[opacity,transform] duration-200" aria-hidden />
+                    </div>
+                    <div className="font-sans text-sm text-muted-foreground">
+                      {education.degree}
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
-                    {education.start && (
-                      <span>
-                        {education.start} - {education.end}
-                      </span>
-                    )}
-                  </div>
+                  {education.start && (
+                    <span className="text-xs font-mono tabular-nums text-muted-foreground text-right flex-none">
+                      {education.start} - {education.end}
+                    </span>
+                  )}
                 </Link>
-              </BlurFade>
+              </TimelineItem>
             ))}
-          </div>
+          </Timeline>
         </div>
       </section>
       )}
