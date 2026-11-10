@@ -63,7 +63,7 @@ export default function IntroLoader() {
         label="Vishen Sharma"
         look="light"
         background={background}
-        logoColor={dark ? "#4ade80" : "#166534"}
+        logoColor={dark ? "#60a5fa" : "#1d4ed8"}
         logoScale={0.6}
         finalScale={0.8}
         loop={false}

@@ -27,7 +27,7 @@ export default function ContactSection() {
           Want to chat? Email me at{" "}
           <Link
             href={`mailto:${DATA.contact.email}`}
-            className="text-green-800 dark:text-green-400 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+            className="text-blue-700 dark:text-blue-400 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
           >
             {DATA.contact.email}
           </Link>{" "}
