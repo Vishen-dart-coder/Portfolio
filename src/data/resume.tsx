@@ -154,9 +154,7 @@ const certifications: Certification[] = [
   { kind: "course", name: "Certified MS Excel", issuer: "Softpro Computer Education", date: "2026", logoUrl: "" },
 ];
 const hackathons: Hackathon[] = [
-  { title: "AWS", dates: "2026", location: "Las Vegas", description: "", image: "/logos/aws.png", links: [] },
-  { title: "AWS", dates: "2026", location: "Mumbai", description: "", image: "/logos/aws.png", links: [] },
-  { title: "AWS", dates: "2026", location: "Bangalore", description: "", image: "/logos/aws.png", links: [] },
+  { title: "AWS events", dates: "2026", location: "Las Vegas · Mumbai · Bangalore", description: "", image: "/logos/aws.png", links: [] },
   { title: "Anthropic community event", dates: "2026", location: "", description: "", image: "/logos/anthropic.png", links: [] },
   { title: "Codex event", dates: "2026", location: "", description: "", image: "/logos/openai.png", links: [] },
   { title: "Inter-House Tech-Quest, third place", dates: "Apr 2025", location: "Podar International School", description: "", image: "/logos/podar.jpg", links: [] },
@@ -195,11 +193,11 @@ export const DATA = {
   summary:
     "I ship production apps like [CareerFlow AI](https://careerflow-ai.org.in) and [Archive360](https://archive360.co), and in my spare time I build the pieces underneath them, from a [database engine](https://github.com/Vishen-dart-coder/db-from-scratch-in-js) to a [local AI agent](https://github.com/Vishen-dart-coder/GrokBot). Most days I'm deep in React, Next.js and TypeScript, and I care about interfaces that feel fast and honest.",
   avatarUrl: "/me.jpg",
-  skillGroups: ["Languages", "Frameworks", "Data & AI", "Cloud & DevOps", "Engineering & analysis"],
+  skillGroups: ["Cloud & DevOps", "Languages", "Frameworks", "Data & AI", "Engineering & analysis"],
   stats: [
     { value: "2", label: "live products" },
     { value: "3", label: "virtual internships" },
-    { value: "24", label: "public repos" },
+    { value: "18", label: "public repos" },
   ],
   skills: [
     { group: "Frameworks", name: "React", icon: ReactLight },
@@ -212,32 +210,16 @@ export const DATA = {
     { group: "Languages", name: "SQL", icon: TableProperties },
     { group: "Data & AI", name: "Postgres", icon: Postgresql },
     { group: "Languages", name: "JavaScript", icon: iconImage("/skills/javascript.svg") },
-    { group: "Frameworks", name: "Tailwind CSS", icon: iconImage("/skills/tailwindcss.svg") },
-    { group: "Frameworks", name: "Express", icon: iconImage("/skills/express.svg", true) },
     { group: "Frameworks", name: "FastAPI", icon: iconImage("/skills/fastapi.svg") },
-    { group: "Data & AI", name: "MongoDB", icon: iconImage("/skills/mongodb.svg") },
     { group: "Frameworks", name: "Electron", icon: iconImage("/skills/electron.svg") },
-    { group: "Languages", name: "Swift", icon: iconImage("/skills/swift.svg") },
     { group: "Data & AI", name: "Ollama", icon: iconImage("/skills/ollama.svg", true) },
     { group: "Cloud & DevOps", name: "Docker", icon: Docker },
     { group: "Cloud & DevOps", name: "Kubernetes", icon: Kubernetes },
     { group: "Cloud & DevOps", name: "AWS", icon: iconImage("/skills/aws.png") },
     { group: "Cloud & DevOps", name: "Google Cloud", icon: iconImage("/skills/googlecloud.svg") },
-    { group: "Cloud & DevOps", name: "Azure", icon: iconImage("/skills/azure.png") },
-    { group: "Cloud & DevOps", name: "Linux", icon: iconImage("/skills/linux.svg") },
-    { group: "Cloud & DevOps", name: "Git", icon: iconImage("/skills/git.svg") },
     { group: "Cloud & DevOps", name: "GitHub Actions", icon: iconImage("/skills/githubactions.svg") },
-    { group: "Cloud & DevOps", name: "Vercel", icon: iconImage("/skills/vercel.svg", true) },
-    { group: "Engineering & analysis", name: "Microsoft Excel", icon: Sheet },
     { group: "Engineering & analysis", name: "System Design", icon: Network },
-    { group: "Engineering & analysis", name: "Software Architecture", icon: Layers },
-    { group: "Engineering & analysis", name: "Database Design", icon: Database },
-    { group: "Engineering & analysis", name: "Algorithms & Data Structures", icon: Binary },
-    { group: "Engineering & analysis", name: "UML Modeling", icon: Shapes },
     { group: "Engineering & analysis", name: "Data Analysis", icon: ChartLine },
-    { group: "Engineering & analysis", name: "Data Visualization", icon: ChartPie },
-    { group: "Engineering & analysis", name: "Data Preparation", icon: Filter },
-    { group: "Engineering & analysis", name: "Process Improvement", icon: Workflow },
   ],
   navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
@@ -360,13 +342,6 @@ export const DATA = {
     },
     {
       title: "Halftone Donut",
-      ship: {
-        summary: "Shipped in 11 min · 4 commits",
-        steps: [
-          { name: "First commit: halftone renderer", timestamp: "27 Aug 2026, 13:43 IST", isCompleted: true },
-          { name: "Shipped with README and demo", timestamp: "27 Aug 2026, 13:54 IST", isCompleted: true },
-        ],
-      },
       href: "https://github.com/Vishen-dart-coder/Donut-Animation",
       dates: "Open source",
       active: true,
@@ -403,14 +378,6 @@ export const DATA = {
     },
     {
       title: "Baseline",
-      ship: {
-        summary: "Shipped in 51 min · 6 commits",
-        steps: [
-          { name: "First commit", timestamp: "27 Aug 2026, 12:32 IST", isCompleted: true },
-          { name: "Fixed image paths and run steps", timestamp: "27 Aug 2026, 12:37 IST", isCompleted: true },
-          { name: "Shipped", timestamp: "27 Aug 2026, 13:23 IST", isCompleted: true },
-        ],
-      },
       href: "https://github.com/Vishen-dart-coder/Baseline",
       dates: "Open source",
       active: true,
